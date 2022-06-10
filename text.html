@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+        }
+        #grid input {
+            text-align: center;
+            font-size: 50px;
+        }
+        #btn{
+            margin: 20px;
+            background-color: tomato;
+            color: aliceblue;
+            height: 70px;
+            width: 150px;
+        }
+        #btn:hover {
+            background-color: rgb(173, 68, 50);
+        }
+        #btn:active {
+            background-color: rgb(109, 43, 32);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="grid">
+        <input type="number" id="in1" value="1">
+        <input type="number" id="in2" value="2">
+        <input type="number" id="in3" value="3">
+        <input type="number" id="in4" value="4">
+        <input type="number" id="in5" value="5">
+        <input type="number" id="in6" value="6">
+        <input type="number" id="in7" value="7">
+        <input type="number" id="in8" value="8">
+        <input type="number" id="in9" value="9">
+    </div>
+    <input type="button" value="Try" onclick="btn()" id="btn">
+
+    <h1 id="message"></h1>
+
+
+    <!-- script -->
+    <script type="text/javascript">
+        // tag inputs
+        var in1 = document.getElementById("in1");
+        var in2 = document.getElementById("in2");
+        var in3 = document.getElementById("in3");
+        var in4 = document.getElementById("in4");
+        var in5 = document.getElementById("in5");
+        var in6 = document.getElementById("in6");
+        var in7 = document.getElementById("in7");
+        var in8 = document.getElementById("in8");
+        var in9 = document.getElementById("in9");
+
+        // tag message div
+        var msg = document.getElementById("message");
+
+        // this var is for test resualt
+        var sucsses = false
+
+        // whene the user click the try buttun this function will run
+        function btn(){
+            // game logic
+
+
+            // input 1 test
+            if (in1.value == in2.value || in1.value == in3.value || in1.value == in4.value || in1.value == in7.value || in1.value == in5.value || in1.value == in9.value){
+                sucsses = false;
+            }
+            // input 2 test
+            else if (in2.value == in1.value || in2.value == in3.value || in2.value == in5.value || in2.value == in8.value || in2.value == in6.value || in2.value == in4.value){
+                sucsses = false;
+            }
+
+            // input 3 test
+            else if (in3.value == in1.value || in3.value == in2.value || in3.value == in6.value || in3.value == in9.value || in3.value == in5.value || in3.value == in7.value){
+                sucsses = false;
+            }
+            // input 4 test
+            else if (in4.value == in1.value || in4.value == in2.value || in4.value == in5.value || in4.value == in6.value || in4.value == in7.value || in4.value == in8.value){
+                sucsses = false;
+            }
+            // input 5 test
+            else if (in5.value == in1.value || in5.value == in2.value || in5.value == in3.value || in5.value == in4.value || in5.value == in6.value || in5.value == in7.value || in5.value == in8.value || in5.value == in9.value){
+                sucsses = false;
+            }
+            // input 6 test
+            else if (in6.value == in2.value || in6.value == in3.value || in6.value == in5.value || in6.value == in8.value || in6.value == in9.value || in6.value == in4.value){
+                sucsses = false;
+            }
+            // input 7 test
+            else if (in7.value == in1.value || in7.value == in4.value || in7.value == in5.value || in7.value == in8.value || in7.value == in9.value || in7.value == in3.value){
+                sucsses = false;
+            }
+            // input 8 test
+            else if (in8.value == in2.value || in8.value == in5.value || in8.value == in9.value || in8.value == in7.value || in8.value == in4.value || in8.value == in6.value){
+                sucsses = false;
+            }
+            // input 9 test
+            else if (in9.value == in1.value || in9.value == in5.value || in9.value == in3.value || in9.value == in7.value || in9.value == in8.value || in9.value == in6.value){
+                sucsses = false;
+            }
+            else {
+                sucsses = true;
+            }
+
+            // alert message
+
+            if (sucsses === true){
+                msg.innerHTML = "you won!"
+                msg.style.color="green";
+            }
+            else {
+                msg.innerHTML = "haha loser!"
+                msg.style.color="red";
+
+            }
+        }
+    </script>
+</body>
+</html>
